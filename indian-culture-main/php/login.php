@@ -70,10 +70,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login - Indian Culture</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700|Montserrat:400,500,600,700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Raleway', sans-serif;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/explore-bg.jpg');
+            /* Keeping original background, modify URL if needed */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/explore-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -82,92 +85,137 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .wrapper {
-            width: 400px;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        }
-        h2 {
-            color: #ff6b6b;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        p {
-            color: #666;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-control {
-            border-radius: 5px;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-        }
-        .form-control:focus {
-            border-color: #ff6b6b;
-            box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
-        }
-        label {
-            font-weight: 600;
-            color: #444;
-        }
-        .btn-primary {
-            background-color: #ff6b6b;
-            border: none;
-            padding: 12px;
-            font-weight: 600;
-            border-radius: 5px;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
-        }
-        .alert {
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #ff6b6b;
-            transition: all 0.3s ease;
-        }
-        a:hover {
-            color: #ff5252;
-            text-decoration: none;
+            padding: 20px 0; /* Add some padding for smaller screens */
         }
         .logo-section {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Increased margin */
         }
         .logo-section h1 {
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
             color: white;
-            font-size: 36px;
-            margin-bottom: 10px;
+            font-size: 42px; /* Increased font size */
+            font-weight: 700;
+            margin-bottom: 5px; /* Adjusted margin */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+        }
+         .logo-section p {
+            color: #eee; /* Lighter color for subtitle */
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .wrapper {
+            width: 100%; /* Make responsive */
+            max-width: 420px; /* Max width */
+            padding: 40px; /* Increased padding */
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
+            border-radius: 15px; /* Increased border radius */
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+            border: 1px solid #FF9933; /* Added subtle border */
+        }
+        .wrapper h2 {
+            color: #FF9933; /* Saffron color */
+            font-weight: 700; /* Bolder */
+            font-family: 'Montserrat', sans-serif; /* Consistent heading font */
+            margin-bottom: 15px; /* Adjusted spacing */
+            text-align: center;
+            font-size: 28px; /* Slightly larger heading */
+        }
+        .wrapper p {
+            color: #555; /* Darker grey for better readability */
+            margin-bottom: 30px; /* Increased spacing */
+            text-align: center;
+            font-size: 15px;
+        }
+        .form-group {
+            margin-bottom: 25px; /* Increased spacing */
+        }
+        .form-control {
+            border-radius: 8px; /* Softer corners */
+            padding: 14px 15px; /* Increased padding */
+            border: 1px solid #ccc; /* Lighter border */
+            transition: all 0.3s ease;
+            height: auto; /* Ensure padding is respected */
+        }
+        .form-control:focus {
+            border-color: #FF9933; /* Saffron border on focus */
+            box-shadow: 0 0 8px rgba(255, 153, 51, 0.4); /* Saffron shadow on focus */
+            background-color: #fff; /* Keep white background on focus */
+        }
+        /* Style for input fields inside input-group */
+        .input-group .form-control {
+             border-top-left-radius: 0;
+             border-bottom-left-radius: 0;
+        }
+        .input-group .form-control:focus {
+            z-index: 3; /* Ensure focus shadow is on top */
+        }
+        label {
+            font-weight: 600;
+            color: #333; /* Darker label */
+            margin-bottom: 8px; /* Added space below label */
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #FF9933; /* Saffron background */
+            border: none;
+            padding: 14px; /* Increased padding */
+            font-weight: 700; /* Bolder text */
+            font-size: 16px;
+            border-radius: 8px; /* Softer corners */
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 0.5px;
+        }
+        .btn-primary:hover {
+            background-color: #E68A00; /* Darker Saffron on hover */
+            transform: translateY(-3px); /* Slightly more lift */
+            box-shadow: 0 8px 20px rgba(230, 138, 0, 0.4); /* Enhanced Saffron shadow */
+        }
+        .alert-danger { /* Style error messages */
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+        }
+        .wrapper a {
+            color: #FF9933; /* Saffron links */
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .wrapper a:hover {
+            color: #E68A00; /* Darker Saffron on hover */
+            text-decoration: underline;
         }
         .home-link {
             display: block;
-            margin-top: 20px;
+            margin-top: 25px; /* Increased spacing */
             text-align: center;
             font-weight: 600;
         }
         .input-group-prepend {
-            width: 40px;
+            width: auto; /* Adjust width automatically */
+             margin-right: -1px; /* Fix gap between addon and input */
         }
         .input-group-text {
-            width: 100%;
-            background-color: #ff6b6b;
-            border-color: #ff6b6b;
+            width: 45px; /* Fixed width for icon background */
+            background-color: #FF9933; /* Saffron background */
+            border: 1px solid #FF9933; /* Saffron border */
             color: white;
             justify-content: center;
+            border-top-left-radius: 8px; /* Match input radius */
+            border-bottom-left-radius: 8px; /* Match input radius */
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .invalid-feedback {
+             font-size: 85%; /* Slightly smaller error text */
+        }
+        .mb-0 { /* Ensure signup link paragraph has correct spacing */
+             margin-bottom: 0 !important;
         }
     </style>
 </head>

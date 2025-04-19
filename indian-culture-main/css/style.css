@@ -447,46 +447,69 @@ input[type=submit]:hover {
 
 section#gallery {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: #f9f9f9;
+}
+
+.filter-button-group {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .filter-button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: none;
-    background-color: #ff6b6b;
-    color: #fff;
-    border-radius: 5px;
+    background-color: #eee;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
     cursor: pointer;
+    margin: 5px 8px;
+    border-radius: 25px;
     transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .filter-button:hover, .filter-button.active {
-    background-color: #ff5252;
+    background-color: #FF9933;
+    color: white;
+    border-color: #FF9933;
+    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
 }
 
 .filter-gal-par {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.port-image {
-    width: 100%;
+    padding: 0 15px;
 }
 
 .gallery_product {
-    margin-bottom: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery_product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .gallery_product img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
 }
 
-.gallery_product img:hover {
+.gallery_product:hover img {
     transform: scale(1.05);
 }
 
@@ -802,11 +825,9 @@ footer {
     }
 
     .filter-button {
-        font-size: 15px;
-        margin-bottom: 30px;
-        margin: 20px 0px;
-        cursor: pointer;
-        transition: all 0.5s ease;
+        padding: 8px 15px;
+        font-size: 13px;
+        margin: 3px 5px;
     }
 
     #fiji-holyday {
