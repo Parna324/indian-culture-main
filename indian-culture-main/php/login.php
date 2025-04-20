@@ -73,45 +73,60 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700|Montserrat:400,500,600,700&display=swap" rel="stylesheet">
     <style>
+        /* Video Background Styling */
+        #bgVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            background-size: cover;
+            filter: brightness(0.9); /* Slightly dim the video */
+        }
         body {
             font-family: 'Raleway', sans-serif;
-            /* Keeping original background, modify URL if needed */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/explore-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            /* Background overlay - slightly darker */
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)); /* Overlay only */
             color: #333;
             min-height: 100vh;
             display: flex;
+            flex-direction: column; /* Allow logo and wrapper to stack */
             align-items: center;
             justify-content: center;
-            padding: 20px 0; /* Add some padding for smaller screens */
+            padding: 20px 0;
         }
         .logo-section {
             text-align: center;
-            margin-bottom: 30px; /* Increased margin */
+            margin-bottom: 30px;
+            width: 100%; /* Ensure it takes width */
+            z-index: 1; /* Keep above video */
         }
         .logo-section h1 {
-            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+            font-family: 'Montserrat', sans-serif;
             color: white;
-            font-size: 42px; /* Increased font size */
+            font-size: 42px;
             font-weight: 700;
-            margin-bottom: 5px; /* Adjusted margin */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
          .logo-section p {
-            color: #eee; /* Lighter color for subtitle */
+            color: #eee;
             font-size: 16px;
             font-weight: 400;
         }
         .wrapper {
-            width: 100%; /* Make responsive */
-            max-width: 420px; /* Max width */
-            padding: 40px; /* Increased padding */
-            background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
-            border-radius: 15px; /* Increased border radius */
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
-            border: 1px solid #FF9933; /* Added subtle border */
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            border: 1px solid #FF9933;
+            z-index: 1; /* Keep above video */
+            position: relative; /* Ensure z-index works */
         }
         .wrapper h2 {
             color: #FF9933; /* Saffron color */
@@ -220,52 +235,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="logo-section">
-                    <h1>Indian Culture</h1>
-                    <p style="color: white;">Explore the rich heritage of India</p>
-                </div>
-                <div class="wrapper">
-                    <h2>Login</h2>
-                    <p>Please fill in your credentials to login</p>
+    <!-- Video Background -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="../images/v2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
 
-                    <?php 
-                    if(!empty($login_err)){
-                        echo '<div class="alert alert-danger">' . $login_err . '</div>';
-                    }        
-                    ?>
+    <!-- Centering Container -->
+    <div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="logo-section">
+            <h1>Indian Culture</h1>
+            <p style="color: #eee;">Explore the rich heritage of India</p> <!-- Adjusted color -->
+        </div>
+        <div class="wrapper">
+            <h2>Login</h2>
+            <p>Please fill in your credentials to login</p>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group">
-                            <label>Username</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                </div>
-                                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                            </div>
-                        </div>    
-                        <div class="form-group">
-                            <label>Password</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                </div>
-                                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                            </div>
+            <?php
+            if(!empty($login_err)){
+                echo '<div class="alert alert-danger">' . $login_err . '</div>';
+            }
+            ?>
+
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Login">
-                        </div>
-                        <p class="mb-0">Don't have an account? <a href="http://localhost/indian-culture-main/indian-culture-main/php/register.php">Sign up now</a></p>
-                    </form>
-                    <a href="http://localhost/indian-culture-main/indian-culture-main/" class="home-link">Back to Home</a>
+                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                        <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                        <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Login">
+                </div>
+                <p class="mb-0">Don't have an account? <a href="http://localhost/indian-culture-main/indian-culture-main/php/register.php">Sign up now</a></p>
+            </form>
+            <a href="http://localhost/indian-culture-main/indian-culture-main/" class="home-link">Back to Home</a>
         </div>
     </div>
 </body>

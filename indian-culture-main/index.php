@@ -12,6 +12,9 @@ session_start();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -109,60 +112,84 @@ session_start();
     <section id="gallery">
         <div class="container">
             <div class="row">
-                <div align="center">
+                <div class="filter-button-group" align="center">
                     <button class="btn filter-button active" data-filter="all">All</button>
                     <button class="btn filter-button" data-filter="hdpe">Foods and Culture</button>
                     <button class="btn filter-button" data-filter="sprinkle">Heritage Sites</button>
                     <button class="btn filter-button" data-filter="spray">Paradise</button>
                 </div>
 
-                <div class="filter-gal-par">
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                        <img src="images/fiji-surprise/f1.jpg" class="img-responsive">
+                <div class="filter-gal-par row">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
+                        <a href="images/fiji-surprise/f1.jpg" data-lightbox="gallery" data-title="Food & Culture 1">
+                           <img src="images/fiji-surprise/f1.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                        <img src="images/fiji-surprise/f2.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
+                         <a href="images/fiji-surprise/f2.jpg" data-lightbox="gallery" data-title="Heritage Site 1">
+                            <img src="images/fiji-surprise/f2.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                        <img src="images/fiji-surprise/f3.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
+                        <a href="images/fiji-surprise/f3.jpg" data-lightbox="gallery" data-title="Food & Culture 2">
+                            <img src="images/fiji-surprise/f3.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                        <img src="images/fiji-surprise/h1.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
+                        <a href="images/fiji-surprise/h1.jpg" data-lightbox="gallery" data-title="Paradise 1">
+                            <img src="images/fiji-surprise/h1.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                        <img src="images/fiji-surprise/h2.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
+                         <a href="images/fiji-surprise/h2.jpg" data-lightbox="gallery" data-title="Heritage Site 2">
+                            <img src="images/fiji-surprise/h2.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                        <img src="images/fiji-surprise/h3.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
+                        <a href="images/fiji-surprise/h3.jpg" data-lightbox="gallery" data-title="Paradise 2">
+                            <img src="images/fiji-surprise/h3.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                        <img src="images/fiji-surprise/p1.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
+                        <a href="images/fiji-surprise/p1.jpg" data-lightbox="gallery" data-title="Heritage Site 3">
+                            <img src="images/fiji-surprise/p1.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                        <img src="images/fiji-surprise/p2.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
+                        <a href="images/fiji-surprise/p2.jpg" data-lightbox="gallery" data-title="Food & Culture 3">
+                             <img src="images/fiji-surprise/p2.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                        <img src="images/fiji-surprise/p3.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
+                         <a href="images/fiji-surprise/p3.jpg" data-lightbox="gallery" data-title="Paradise 3">
+                            <img src="images/fiji-surprise/p3.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                        <img src="images/fiji-surprise/g1.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
+                         <a href="images/fiji-surprise/g1.jpg" data-lightbox="gallery" data-title="Food & Culture 4">
+                            <img src="images/fiji-surprise/g1.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
-                        <img src="images/fiji-surprise/g2.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
+                         <a href="images/fiji-surprise/g2.jpg" data-lightbox="gallery" data-title="Heritage Site 4">
+                            <img src="images/fiji-surprise/g2.jpg" class="img-responsive">
+                        </a>
                     </div>
 
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
-                        <img src="images/fiji-surprise/g3.jpg" class="img-responsive">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
+                        <a href="images/fiji-surprise/g3.jpg" data-lightbox="gallery" data-title="Paradise 4">
+                            <img src="images/fiji-surprise/g3.jpg" class="img-responsive">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -232,6 +259,8 @@ session_start();
 
 
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/extrenaljq.js"></script>
 </body>
