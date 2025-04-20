@@ -442,140 +442,119 @@ input[type=submit]:hover {
     flex: 1;
 }
 
-
 /*gallery*/
+/* Removing old gallery styles */
 
-section#gallery {
+/*holyday-fiji - Renamed to great-indian-cities */
+
+#fiji-holyday { /* Rename this ID in index.php too if desired */
+    min-height: auto;
     padding: 80px 0;
-    background-color: #f9f9f9;
+    /* Updated background to use image + overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('../images/india1.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Optional: parallax effect */
+    color: #fff;
 }
 
-.filter-button-group {
+#fiji-holyday h3.section-heading { /* Added a class for the main heading */
     text-align: center;
-    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 50px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
-
-.filter-button {
-    background-color: #eee;
-    color: #555;
-    border: 1px solid #ddd;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    margin: 5px 8px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.filter-button:hover, .filter-button.active {
-    background-color: #FF9933;
-    color: white;
-    border-color: #FF9933;
-    box-shadow: 0 4px 10px rgba(255, 153, 51, 0.3);
-}
-
-.filter-gal-par {
-    padding: 0 15px;
-}
-
-.gallery_product {
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-    background-color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery_product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.gallery_product img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.4s ease;
-}
-
-.gallery_product:hover img {
-    transform: scale(1.05);
-}
-
-/*holyday-fiji*/
 
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 35px; /* Increased gap */
     justify-content: center;
     list-style: none;
     padding: 0;
 }
 
 .card {
-    width: 300px;
-    background: #fff;
-    border-radius: 10px;
+    width: 350px; /* Slightly larger cards */
+    background: #fff; /* Base background */
+    border-radius: 15px; /* Softer corners */
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative; /* For positioning overlay and text */
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px); /* Increased lift */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* Stronger shadow */
+}
+
+.card .card-image-container {
+    position: relative; /* Container for image and overlay */
+    height: 250px; /* Increased image height */
+    overflow: hidden; /* Ensure overlay fits */
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 100%; /* Fill the container */
     object-fit: cover;
+    display: block; /* Remove potential spacing issues */
+    transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-.card h3 {
-    padding: 15px;
+.card:hover img {
+     transform: scale(1.05); /* Slight zoom on hover */
+     filter: brightness(1.1); /* Slightly brighten image */
+}
+
+/* Gradient Overlay */
+.card .card-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Cover more of the image */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    opacity: 0.8; /* Slightly stronger base opacity */
+    transition: opacity 0.35s ease;
+}
+
+.card:hover .card-image-container::after {
+    opacity: 0.9; /* Darken slightly more on hover */
+}
+
+.card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px; /* More padding */
+    z-index: 2; /* Above overlay */
+    color: #fff;
+}
+
+.card h3.city-name { /* Added class */
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-size: 24px; /* Larger city name */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+.card h3.city-name a {
+    color: inherit; /* Inherit white color */
+    text-decoration: none;
+}
+
+.card p.city-description { /* Added class */
+    padding: 0;
     margin: 0;
-}
-
-.card p {
-    padding: 0 15px 15px;
-    color: #666;
-}
-
-/* Additional demo display styles */
-#fiji-holyday {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 1rem;
-  line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  color: #444;
-  background-color: #e1faf1;
-  box-sizing: border-box;
-    
-}
-
-.card h3 {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-}
-
-.card a {
-  color: inherit;
+    color: #eee; /* Light text color */
+    font-size: 15px;
+    line-height: 1.4;
 }
 
 /*blog*/
@@ -650,6 +629,197 @@ div#blog-par {
     font-size: 14px;
     line-height: 25px;
 }
+
+/* ======= New Heritage Gallery Styles ======= */
+#heritage-gallery {
+    padding: 60px 0;
+}
+
+.heritage-gallery .section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #333;
+}
+
+/* Optional: Add an underline to the main title */
+.heritage-gallery .section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #FF9933; /* Saffron color */
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+
+.heritage-gallery .section-title p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+.state-section {
+    position: relative; /* Needed for absolute positioning of bg video */
+    overflow: hidden; /* Hide video overflow */
+    padding: 40px 0; /* Add padding so content isn't flush with edges */
+}
+
+/* Background video specific styles */
+.state-section .state-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind content */
+}
+
+.state-section .state-bg-video video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.6); /* Dim the video further */
+}
+
+/* Style the content rows to appear above video */
+.state-section .state-content-row {
+    position: relative;
+    z-index: 2; /* Above video */
+    /* Optional: Add overlay/padding directly to rows if needed */
+    /* background-color: rgba(0, 0, 0, 0.5); */ 
+    /* padding: 20px; */
+    /* border-radius: 8px; */
+}
+
+/* Ensure text is readable over video */
+.state-section.west-bengal .text-container h3,
+.state-section.west-bengal .text-container p,
+.state-section.uttar-pradesh .text-container h3,
+.state-section.uttar-pradesh .text-container p,
+.state-section.bihar .text-container h3,
+.state-section.bihar .text-container p {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.state-section .text-container h3 {
+    font-size: 32px; /* Slightly larger state title */
+    font-weight: 700;
+    color: #FFD700; /* Use Gold for state names */
+    margin-bottom: 15px;
+}
+
+.state-section .text-container p {
+    line-height: 1.7;
+    color: #f0f0f0; /* Light grey text */
+    font-size: 1rem;
+}
+
+.state-section .video-container video {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Ensure controls are visible */
+    max-width: 100%; 
+}
+
+.state-section .image-grid {
+    margin-top: 30px;
+}
+
+.state-section .image-grid .img-item {
+    padding: 10px; /* Slightly increase gutter again */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Slightly larger radius */
+    background-color: #eee; /* Add a light bg while images load */
+}
+
+.state-section .image-grid .img-item img {
+    width: 100%;
+    height: 350px; /* Significantly increased height */
+    object-fit: cover;
+    display: block;
+    border-radius: 10px; /* Match container radius */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18); /* Refined shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Gradient Overlay + Icon Hover Effect */
+.state-section .image-grid .img-item::before, /* Icon */
+.state-section .image-grid .img-item::after { /* Gradient */
+    content: '';
+    position: absolute;
+    left: 10px; /* Match padding */
+    right: 10px; /* Match padding */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+/* Gradient Overlay Style */
+.state-section .image-grid .img-item::after {
+    bottom: 10px; /* Match padding */
+    height: 50%; /* Cover bottom half */
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0)); /* Gradient */
+}
+
+/* Icon Style (using Font Awesome) */
+.state-section .image-grid .img-item::before {
+    content: '\f06e'; /* Font Awesome eye icon */
+    font-family: 'FontAwesome';
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.85);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 0; /* Reset border-radius for icon */
+}
+
+.state-section .image-grid .img-item:hover img {
+    transform: scale(1.06); /* Keep subtle scale */
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28); /* Refined hover shadow */
+}
+
+.state-section .image-grid .img-item:hover::before, /* Show icon */
+.state-section .image-grid .img-item:hover::after { /* Show gradient */
+    opacity: 1;
+}
+
+/* Style for the View More button (used in State 3 example) */
+.state-section .btn-primary {
+    background-color: #FF9933;
+    border-color: #FF9933;
+    padding: 10px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
+.state-section .btn-primary:hover {
+    background-color: #E68A00;
+    border-color: #E68A00;
+}
+
+.section-bg {
+    background-color: #f8f9fa; /* Light background for the whole section */
+}
+/* ======= End New Heritage Gallery Styles ======= */
 
 /*footer*/
 

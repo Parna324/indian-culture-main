@@ -32,7 +32,7 @@
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#welcome_Sec">About</a></li>
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#slides_parent">Heritage</a></li>
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#explore-fiji">Explore</a></li>
-                        <li><a href="http://localhost/indian-culture-main/indian-culture-main/#gallery">Gallery</a></li>
+                        <li><a href="http://localhost/indian-culture-main/indian-culture-main/#heritage-gallery">Gallery</a></li>
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#blog">Blog</a></li>
                         <?php
                         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){

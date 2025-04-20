@@ -108,114 +108,147 @@ session_start();
      <br><br><center> <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rWVL7-ObutJZd9PlLtzqS4kounhEzHg&ehbc=2E312F" width="60%" height="480"></iframe></center>
     </section>
 
-
-    <section id="gallery">
+    <!-- ======= New Heritage Gallery Section ======= -->
+    <section id="heritage-gallery" class="heritage-gallery section-bg">
         <div class="container">
-            <div class="row">
-                <div class="filter-button-group" align="center">
-                    <button class="btn filter-button active" data-filter="all">All</button>
-                    <button class="btn filter-button" data-filter="hdpe">Foods and Culture</button>
-                    <button class="btn filter-button" data-filter="sprinkle">Heritage Sites</button>
-                    <button class="btn filter-button" data-filter="spray">Paradise</button>
+
+            <div class="section-title text-center mb-5">
+                <h2>Explore The Heritage of India</h2>
+                <p>Discover the rich culture, history, and beauty of India, one state at a time.</p>
+            </div>
+
+            <!-- --- West Bengal Section --- -->
+            <div class="state-section west-bengal mb-5 pb-5 border-bottom">
+                <!-- Background Video -->
+                <div class="state-bg-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/westbengal/west1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-
-                <div class="filter-gal-par row">
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
-                        <a href="images/fiji-surprise/f1.jpg" data-lightbox="gallery" data-title="Food & Culture 1">
-                           <img src="images/fiji-surprise/f1.jpg" class="img-responsive">
-                        </a>
+                <!-- Content Row -->
+                <div class="row state-content-row align-items-center mb-4">
+                    <!-- Text Column -->
+                    <div class="col-lg-6 text-container ps-lg-5">
+                        <h3>West Bengal</h3>
+                        <p>Known as the cultural capital of India, West Bengal offers a unique blend of colonial architecture, vibrant festivals like Durga Puja, rich literature, and the serene beauty of the Sundarbans mangrove forest.</p>
+                        <p>From the bustling streets of Kolkata to the tea gardens of Darjeeling, experience the artistic soul and historical depth of this eastern state.</p>
                     </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
-                         <a href="images/fiji-surprise/f2.jpg" data-lightbox="gallery" data-title="Heritage Site 1">
-                            <img src="images/fiji-surprise/f2.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
-                        <a href="images/fiji-surprise/f3.jpg" data-lightbox="gallery" data-title="Food & Culture 2">
-                            <img src="images/fiji-surprise/f3.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
-                        <a href="images/fiji-surprise/h1.jpg" data-lightbox="gallery" data-title="Paradise 1">
-                            <img src="images/fiji-surprise/h1.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
-                         <a href="images/fiji-surprise/h2.jpg" data-lightbox="gallery" data-title="Heritage Site 2">
-                            <img src="images/fiji-surprise/h2.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
-                        <a href="images/fiji-surprise/h3.jpg" data-lightbox="gallery" data-title="Paradise 2">
-                            <img src="images/fiji-surprise/h3.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
-                        <a href="images/fiji-surprise/p1.jpg" data-lightbox="gallery" data-title="Heritage Site 3">
-                            <img src="images/fiji-surprise/p1.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
-                        <a href="images/fiji-surprise/p2.jpg" data-lightbox="gallery" data-title="Food & Culture 3">
-                             <img src="images/fiji-surprise/p2.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
-                         <a href="images/fiji-surprise/p3.jpg" data-lightbox="gallery" data-title="Paradise 3">
-                            <img src="images/fiji-surprise/p3.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter hdpe">
-                         <a href="images/fiji-surprise/g1.jpg" data-lightbox="gallery" data-title="Food & Culture 4">
-                            <img src="images/fiji-surprise/g1.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter sprinkle">
-                         <a href="images/fiji-surprise/g2.jpg" data-lightbox="gallery" data-title="Heritage Site 4">
-                            <img src="images/fiji-surprise/g2.jpg" class="img-responsive">
-                        </a>
-                    </div>
-
-                    <div class="gallery_product col-lg-4 col-md-4 col-sm-6 col-xs-12 filter spray">
-                        <a href="images/fiji-surprise/g3.jpg" data-lightbox="gallery" data-title="Paradise 4">
-                            <img src="images/fiji-surprise/g3.jpg" class="img-responsive">
-                        </a>
-                    </div>
+                     <!-- Placeholder Column (to maintain layout balance if needed, or remove if text/images span full width) -->
+                     <div class="col-lg-6"></div>
+                </div>
+                <!-- Image Grid -->
+                <div class="image-grid row state-content-row">
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/westbengal/p1.jpg" class="img-fluid" alt="West Bengal Image 1"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/westbengal/p2.jpg" class="img-fluid" alt="West Bengal Image 2"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/westbengal/p3.jpg" class="img-fluid" alt="West Bengal Image 3"></div>
+                    <div class="col-lg col-md-6 col-6 img-item"><img src="images/westbengal/p4.jpg" class="img-fluid" alt="West Bengal Image 4"></div>
+                    <div class="col-lg col-md-6 col-12 img-item"><img src="images/westbengal/p5.jpg" class="img-fluid" alt="West Bengal Image 5"></div>
                 </div>
             </div>
+            <!-- --- End West Bengal Section --- -->
+
+            <!-- --- Uttar Pradesh Section --- -->
+            <div class="state-section uttar-pradesh mb-5 pb-5 border-bottom">
+                 <!-- Background Video -->
+                 <div class="state-bg-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/uttarpradesh/west2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Content Row - Reversed Order -->
+                <div class="row state-content-row align-items-center mb-4">
+                    <!-- Text Column (Order 1 on large screens) -->
+                    <div class="col-lg-6 text-container order-lg-1 pe-lg-5">
+                        <h3>Uttar Pradesh</h3>
+                        <p>Home to iconic landmarks like the Taj Mahal and the holy city of Varanasi on the banks of the Ganges, Uttar Pradesh is the heartland of India. It boasts a rich history, diverse cultures, and spiritual significance.</p>
+                        <p>Explore ancient temples, Mughal architecture, and vibrant religious ceremonies in India's most populous state.</p>
+                    </div>
+                     <!-- Placeholder Column (Order 2 on large screens) -->
+                     <div class="col-lg-6 order-lg-2"></div>
+                </div>
+                <!-- Image Grid -->
+                <div class="image-grid row state-content-row">
+                    <!-- Using available images from uttarpradesh folder -->
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/uttarpradesh/IMG-20250420-WA0016.jpg" class="img-fluid" alt="Uttar Pradesh Image 1"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/uttarpradesh/IMG-20250420-WA0017.jpg" class="img-fluid" alt="Uttar Pradesh Image 2"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/uttarpradesh/IMG-20250420-WA0018.jpg" class="img-fluid" alt="Uttar Pradesh Image 3"></div>
+                    <div class="col-lg col-md-6 col-6 img-item"><img src="images/uttarpradesh/IMG-20250420-WA0019.jpg" class="img-fluid" alt="Uttar Pradesh Image 4"></div>
+                    <div class="col-lg col-md-6 col-12 img-item"><img src="images/uttarpradesh/IMG-20250420-WA0027.jpg" class="img-fluid" alt="Uttar Pradesh Image 5"></div>
+                </div>
+            </div>
+            <!-- --- End Uttar Pradesh Section --- -->
+
+             <!-- --- Bihar Section --- -->
+            <div class="state-section bihar mb-5 pb-5 border-bottom">
+                 <!-- Background Video -->
+                 <div class="state-bg-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/bihar/b1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Content Row - Original Order -->
+                <div class="row state-content-row align-items-center mb-4">
+                    <!-- Placeholder Column -->
+                     <div class="col-lg-6"></div>
+                     <!-- Text Column -->
+                    <div class="col-lg-6 text-container ps-lg-5">
+                        <h3>Bihar</h3>
+                        <p>Birthplace of Buddhism and Jainism, Bihar holds immense historical and spiritual significance. It is home to ancient sites like Nalanda University ruins and Bodh Gaya, where Buddha attained enlightenment.</p>
+                        <p>Discover the state's rich past, vibrant Madhubani art, and unique cultural traditions along the fertile plains of the Ganges.</p>
+                    </div>
+                </div>
+                <!-- Image Grid -->
+                <div class="image-grid row state-content-row">
+                    <!-- Using available images from bihar folder -->
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/bihar/IMG-20250420-WA0020.jpg" class="img-fluid" alt="Bihar Image 1"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/bihar/IMG-20250420-WA0021.jpg" class="img-fluid" alt="Bihar Image 2"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/bihar/IMG-20250420-WA0022.jpg" class="img-fluid" alt="Bihar Image 3"></div>
+                    <div class="col-lg col-md-6 col-6 img-item"><img src="images/bihar/IMG-20250420-WA0023.jpg" class="img-fluid" alt="Bihar Image 4"></div>
+                    <div class="col-lg col-md-6 col-12 img-item"><img src="images/bihar/IMG-20250420-WA0024.jpg" class="img-fluid" alt="Bihar Image 5"></div>
+                    <div class="col-lg col-md-4 col-6 img-item"><img src="images/bihar/IMG-20250420-WA0026.jpg" class="img-fluid" alt="Bihar Image 6"></div> 
+                </div>
+            </div>
+            <!-- --- End Bihar Section --- -->
+
         </div>
     </section>
+    <!-- ======= End Heritage Gallery Section ======= -->
 
     <section id="fiji-holyday">
         <div class="container">
-            <h3>The Great Indian Cities</h3>
+            <h3 class="section-heading">The Great Indian Cities</h3>
             <ul class="card-wrapper">
-  <li class="card">
-    <img src='images/slider/delhi.jpg' alt=''>
-    <h3><a href="">Delhi</a></h3>
-    <p>The Capital of India</p>
-  </li>
-  <li class="card">
-    <img src='images/slider/mumbai.jpg' alt=''>
-    <h3><a href="">Mumbai</a></h3>
-    <p>The financial Capital Of India</p>
-  </li>
-  <li class="card">
-    <img src='images/slider/banglore.jpg' alt=''>
-    <h3><a href="">Banglore</a></h3>
-    <p>Silicon Valley Of India</p>
-  </li>
-</ul>
+              <li class="card">
+                <div class="card-image-container">
+                    <img src='images/slider/delhi.jpg' alt=''>
+                </div>
+                <div class="card-content">
+                    <h3 class="city-name"><a href="">Delhi</a></h3>
+                    <p class="city-description">The Capital of India</p>
+                </div>
+              </li>
+              <li class="card">
+                 <div class="card-image-container">
+                    <img src='images/slider/mumbai.jpg' alt=''>
+                 </div>
+                 <div class="card-content">
+                    <h3 class="city-name"><a href="">Mumbai</a></h3>
+                    <p class="city-description">The financial Capital Of India</p>
+                 </div>
+              </li>
+              <li class="card">
+                <div class="card-image-container">
+                    <img src='images/slider/banglore.jpg' alt=''>
+                </div>
+                 <div class="card-content">
+                    <h3 class="city-name"><a href="">Banglore</a></h3>
+                    <p class="city-description">Silicon Valley Of India</p>
+                </div>
+              </li>
+            </ul>
         </div>
     </section>
 
