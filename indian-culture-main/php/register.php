@@ -386,9 +386,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="submit" class="btn btn-primary" value="Create Account">
                     <input type="reset" class="btn btn-secondary" value="Reset">
                 </div>
-                <p class="mt-3">Already have an account? <a href="http://localhost/indian-culture-main/indian-culture-main/php/login.php">Login here</a></p>
+                <p class="mt-3">Already have an account? <a href="login.php">Login here</a></p>
             </form>
-            <a href="http://localhost/indian-culture-main/indian-culture-main/" class="home-link">Back to Home</a>
+            <a href="../" class="home-link">Back to Home</a>
         </div>
     </div>
 </body>

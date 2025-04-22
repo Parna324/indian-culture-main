@@ -281,10 +281,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Login">
                 </div>
-                <p class="mb-0">Don't have an account? <a href="http://localhost/indian-culture-main/indian-culture-main/php/register.php">Sign up now</a></p>
+                <div class="text-center mb-0">
+                    <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+                </div>
+                <div class="text-right mt-2">
+                    <a href="forgot_password.php" style="font-size: 0.9em;">Forgot Password?</a>
+                </div>
             </form>
-            <a href="http://localhost/indian-culture-main/indian-culture-main/" class="home-link">Back to Home</a>
+            <a href="../" class="home-link">Back to Home</a>
         </div>
     </div>
+
+    <!-- Include JS if needed -->
+    <!-- <script src="../js/jquery-3.1.1.min.js"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
 </body>
 </html> 

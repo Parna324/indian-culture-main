@@ -34,6 +34,7 @@
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#explore-fiji">Explore</a></li>
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#heritage-gallery">Gallery</a></li>
                         <li><a href="http://localhost/indian-culture-main/indian-culture-main/#blog">Blog</a></li>
+                        <li><a href="http://localhost/indian-culture-main/indian-culture-main/php/best_time_to_visit.php">Visit Planner</a></li>
                         <?php
                         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                             echo '<li><a href="http://localhost/indian-culture-main/indian-culture-main/php/welcome.php">Profile</a></li>';
