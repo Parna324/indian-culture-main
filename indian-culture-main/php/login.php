@@ -1,66 +1,102 @@
 <?php
+// Start a new session or resume the existing one
 session_start();
 
+// If the user is already logged in, redirect them to the homepage
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: http://localhost/indian-culture-main/indian-culture-main/");
-    exit;
+    exit; // Stop executing the script after redirection
 }
 
+// Include the database configuration file
 require_once "config.php";
 
+// Initialize variables for username and password
 $username = $password = "";
+
+// Initialize variables for error messages
 $username_err = $password_err = $login_err = "";
 
+// Process form data when the form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $username_err = "Please enter username."; // Set error message
     } else{
-        $username = trim($_POST["username"]);
+        $username = trim($_POST["username"]); // Trim whitespace from username input
     }
 
+    // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
+        $password_err = "Please enter your password."; // Set error message
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($_POST["password"]); // Trim whitespace from password input
     }
 
+    // Validate credentials if there are no input errors
     if(empty($username_err) && empty($password_err)){
+        
+        // Prepare SQL query to fetch user data based on the username
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
         
+        // Prepare the SQL statement using mysqli
         if($stmt = mysqli_prepare($conn, $sql)){
+            
+            // Bind the input parameter (username) to the prepared statement
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             $param_username = $username;
 
+            // Execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
+                
+                // Store the result to check if the user exists
                 mysqli_stmt_store_result($stmt);
 
+                // Check if a user with that username exists (only one row should be returned)
                 if(mysqli_stmt_num_rows($stmt) == 1){
+                    
+                    // Bind the result variables to fetch the data
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    
+                    // Fetch the result
                     if(mysqli_stmt_fetch($stmt)){
+                        
+                        // Verify the entered password with the hashed password in the database
                         if(password_verify($password, $hashed_password)){
+                            
+                            // Password is correct; start a new session and store session variables
                             session_start();
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
+
+                            // Redirect user to the homepage after successful login
                             header("location: http://localhost/indian-culture-main/indian-culture-main/");
                         } else{
+                            // Password is not valid
                             $login_err = "Invalid username or password.";
                         }
                     }
                 } else{
+                    // Username doesn't exist
                     $login_err = "Invalid username or password.";
                 }
             } else{
+                // SQL execution failed
                 echo "Oops! Something went wrong. Please try again later.";
             }
 
+            // Close the prepared statement
             mysqli_stmt_close($stmt);
         }
     }
 
+    // Close the database connection
     mysqli_close($conn);
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
